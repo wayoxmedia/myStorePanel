@@ -1,0 +1,17 @@
+services:
+  php-apache-environment:
+    image: msp:1.0.0
+    container_name: msp
+    build:
+      context: ./
+      dockerfile: docker/Dockerfile
+    volumes:
+      - ./html:/var/www/html/
+    ports:
+      - '${APP_PORT}:80'
+    env_file:
+      - .env
+    environment:
+      # Enables Xdebug's code coverage analysis for development and testing purposes.
+      # Ensure this is disabled in production to avoid performance issues.
+      - XDEBUG_MODE=coverage,debug

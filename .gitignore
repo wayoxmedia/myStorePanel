@@ -1,0 +1,25 @@
+### App
+.env
+
+### IDE
+.idea/
+/.idea
+/*.iml
+
+########################
+### COMPOSER
+/vendor/
+!/composer.json
+composer.lock
+
+########################
+### App security
+secure
+
+########################
+### Documentation
+docs
+
+########################
+### OS
+.DS_Store
